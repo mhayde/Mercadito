@@ -23,13 +23,24 @@ references Proveedor(idProveedor)
 )
 go
 create table Inventario(
-ProductoId
-nombre varchar(250) not null,
-constraint pkProveedor primary key(idProveedor)
+Productoid int null,
+existencia int null,
+constraint fkInventarioProducto foreign key(Productoid)
+references Producto(idProducto)
 )
 go
 insert Proveedor(nombre)
-values('Pepsi'),('Cocacola'),('Pan Bimbo'),('Pan Centeno'),('Yummies'),('Sula'),('Leyde'),('Diana'),('Fresimas'),('El pueblo')
+values
+('Pepsi'),
+('Cocacola'),
+('Pan Bimbo'),
+('Pan Centeno'),
+('Yummies'),
+('Sula'),
+('Leyde'),
+('Diana'),
+('Fresimas'),
+('El pueblo')
 go
 insert Producto
 values
